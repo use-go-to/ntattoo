@@ -1669,9 +1669,8 @@ document.getElementById('age').addEventListener('input', function() {
                         <li><a href="#apropos">À propos de moi</a></li>
                         <li><a href="#prix">Grille tarifaire</a></li>
                         <li><a href="#rdv">Prendre RDV</a></li>
-                        <li><a href="#local">Visiter le local</a></li>
-                        <li><a href="#vente-flash">Ventes flash</a></li>
-                        <li><a href="#kit-creme">Produits de soin</a></li>
+                        <li><a href="#local">Visiter le local</a></li>                      
+            
                     </ul>
                 </div>
                 <div class="footer-section contact">
@@ -1692,153 +1691,189 @@ document.getElementById('age').addEventListener('input', function() {
     </footer>
 
     <script>
-        // Navigation entre les pages
-        document.addEventListener('DOMContentLoaded', function() {
-            // Afficher la page d'accueil par défaut
-            document.getElementById('accueil').style.display = 'block';
-            
-            // Navigation
-            const navLinks = document.querySelectorAll('nav ul li a');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Retirer la classe active de tous les liens
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    
-                    // Ajouter la classe active au lien cliqué
-                    this.classList.add('active');
-                    
-                    // Masquer toutes les sections
-                    const sections = document.querySelectorAll('.page-section, #accueil');
-                    sections.forEach(section => {
-                        section.style.display = 'none';
-                    });
-                    
-                    // Afficher la section correspondante
-                    const targetId = this.getAttribute('href').substring(1);
-                    document.getElementById(targetId).style.display = 'block';
-                    
-                    // Fermer le menu burger si ouvert
-                    closeMobileMenu();
-                    
-                    // Scroll vers le haut de la page
-                    window.scrollTo(0, 0);
-                });
+    document.addEventListener('DOMContentLoaded', function() {
+        // Fonction pour afficher une section et masquer les autres
+        function showSection(sectionId) {
+            // Masquer toutes les sections
+            const sections = document.querySelectorAll('.page-section, #accueil');
+            sections.forEach(section => {
+                section.style.display = 'none';
             });
             
-            // Menu burger
-            const burger = document.querySelector('.burger');
-            const nav = document.querySelector('.nav-links');
-            const navLinksItems = document.querySelectorAll('.nav-links li');
-            
-            burger.addEventListener('click', () => {
-                // Toggle Nav
-                nav.classList.toggle('show');
+            // Afficher la section demandée
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
                 
-                // Animation des liens
-                navLinksItems.forEach((link, index) => {
-                    if (link.style.animation) {
-                        link.style.animation = '';
-                    } else {
-                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-                    }
-                });
-                
-                // Animation burger
-                burger.classList.toggle('toggle');
-            });
-            
-            // Fonction pour fermer le menu mobile
-            function closeMobileMenu() {
-                nav.classList.remove('show');
-                burger.classList.remove('toggle');
-                
-                // Réinitialiser les animations des liens
-                navLinksItems.forEach(link => {
-                    link.style.animation = '';
-                });
-            }
-            
-            // Sticky header
-            window.addEventListener('scroll', () => {
-                const header = document.querySelector('header');
-                header.classList.toggle('sticky', window.scrollY > 50);
-            });
-            
-            // Avertissement pour les mineurs
-            const ageInput = document.getElementById('age');
-            const minorWarning = document.getElementById('minor-warning');
-            
-            if (ageInput) {
-                ageInput.addEventListener('input', function() {
-                    if (this.value < 18) {
-                        minorWarning.style.display = 'block';
-                    } else {
-                        minorWarning.style.display = 'none';
-                    }
-                });
-            }
-            
-            // Upload de fichiers
-            const fileUpload = document.querySelector('.file-upload');
-            if (fileUpload) {
-                const fileInput = fileUpload.querySelector('input');
-                
-                fileUpload.addEventListener('click', () => {
-                    fileInput.click();
-                });
-                
-                fileInput.addEventListener('change', function() {
-                    if (this.files.length > 0) {
-                        fileUpload.innerHTML = `<i class="fas fa-check-circle"></i><p>${this.files.length} fichier(s) sélectionné(s)</p>`;
-                    }
-                });
-            }
-            
-            // Filtres galerie
-            const filterButtons = document.querySelectorAll('.filters .btn');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Retirer la classe active de tous les boutons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Ajouter la classe active au bouton cliqué
-                    this.classList.add('active');
-                    
-                    // Ici vous implémenteriez le filtrage des images
-                    // Pour cet exemple, nous allons simplement simuler un chargement
-                    const galleryItems = document.querySelectorAll('.gallery-item');
-                    galleryItems.forEach(item => {
-                        item.style.opacity = '0.5';
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                        }, 300);
-                    });
-                });
-            });
-            
-            // Fermer le menu lorsqu'on clique à l'extérieur
-            document.addEventListener('click', function(e) {
-                if (!nav.contains(e.target) && !burger.contains(e.target)) {
-                    closeMobileMenu();
+                // Si ce n'est pas l'accueil, scroll vers la section
+                if (sectionId !== 'accueil') {
+                    setTimeout(() => {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 50);
                 }
-            });
+            } else {
+                // Par défaut, afficher l'accueil
+                document.getElementById('accueil').style.display = 'block';
+            }
+        }
+
+        // Gestionnaire de clic pour tous les liens d'ancrage
+        function handleAnchorClick(e) {
+            if (this.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                
+                // Mettre à jour la navigation active si c'est un lien du menu
+                if (this.closest('nav')) {
+                    document.querySelectorAll('nav ul li a').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                }
+                
+                // Afficher la section correspondante
+                showSection(targetId);
+                
+                // Mettre à jour l'URL sans recharger la page
+                history.pushState(null, null, `#${targetId}`);
+            }
+        }
+
+        // Appliquer le gestionnaire à tous les liens d'ancrage
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', handleAnchorClick);
         });
 
+        // Menu burger
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinksItems = document.querySelectorAll('.nav-links li');
+        
+        burger.addEventListener('click', () => {
+            // Toggle Nav
+            nav.classList.toggle('show');
+            
+            // Animation des liens
+            navLinksItems.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+            
+            // Animation burger
+            burger.classList.toggle('toggle');
+        });
+        
+        // Fonction pour fermer le menu mobile
+        function closeMobileMenu() {
+            nav.classList.remove('show');
+            burger.classList.remove('toggle');
+            navLinksItems.forEach(link => {
+                link.style.animation = '';
+            });
+        }
+        
+        // Sticky header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 50);
+        });
+        
+        // Avertissement pour les mineurs
+        const ageInput = document.getElementById('age');
+        const minorWarning = document.getElementById('minor-warning');
+        
+        if (ageInput && minorWarning) {
+            ageInput.addEventListener('input', function() {
+                minorWarning.style.display = this.value < 18 ? 'block' : 'none';
+            });
+        }
+        
+        // Gestion du chargement initial en fonction de l'URL
+        function checkInitialHash() {
+            if (window.location.hash) {
+                const sectionId = window.location.hash.substring(1);
+                showSection(sectionId);
+                
+                // Activer le lien correspondant dans la navigation
+                const correspondingNavLink = document.querySelector(`nav ul li a[href="#${sectionId}"]`);
+                if (correspondingNavLink) {
+                    document.querySelectorAll('nav ul li a').forEach(l => l.classList.remove('active'));
+                    correspondingNavLink.classList.add('active');
+                }
+            } else {
+                // Afficher l'accueil par défaut
+                showSection('accueil');
+            }
+        }
+        
+        // Vérifier l'URL au chargement
+        checkInitialHash();
+        
+        // Gérer les changements d'URL (quand on utilise les boutons précédent/suivant du navigateur)
+        window.addEventListener('popstate', function() {
+            checkInitialHash();
+        });
+        
+        // Fermer le menu lorsqu'on clique à l'extérieur
+        document.addEventListener('click', function(e) {
+            if (!nav.contains(e.target) && !burger.contains(e.target) && nav.classList.contains('show')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Gestion de l'affichage des fichiers uploadés
+        const fileInput = document.getElementById('fichiers');
+        const fileList = document.getElementById('file-list');
+        
+        if (fileInput && fileList) {
+            fileInput.addEventListener('change', function(e) {
+                fileList.innerHTML = '';
+                
+                if(this.files.length > 3) {
+                    alert('Maximum 3 fichiers autorisés');
+                    this.value = '';
+                    return;
+                }
+                
+                Array.from(this.files).forEach(file => {
+                    const fileItem = document.createElement('div');
+                    fileItem.className = 'file-item mb-2';
+                    fileItem.innerHTML = `
+                        <i class="fas fa-paperclip mr-2"></i>
+                        ${file.name} (${(file.size/1024/1024).toFixed(2)}MB)
+                    `;
+                    fileList.appendChild(fileItem);
+                });
+            });
+        }
+    });
 
-
-
-
-
-
-
-
-
-
-
-    </script>
+    // Animation pour le menu burger
+    const navSlide = () => {
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
+        
+        burger.addEventListener('click', () => {
+            // Toggle Nav
+            nav.classList.toggle('nav-active');
+            
+            // Animate Links
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+            
+            // Burger Animation
+            burger.classList.toggle('toggle');
+        });
+    }
+    
+    navSlide();
+</script>
 </body>
 </html>
