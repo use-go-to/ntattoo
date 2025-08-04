@@ -206,19 +206,87 @@
             color: var(--rose-pale);
         }
 
-        .burger {
-            display: none;
-            cursor: pointer;
-            z-index: 1001;
+        /* Menu Burger - Version corrigée */
+    .burger {
+        display: none; /* Caché par défaut sur desktop */
+        cursor: pointer;
+        z-index: 1002; /* Au-dessus du menu */
+        position: relative;
         }
 
+    @media (max-width: 768px) {
+        .burger {
+            display: block;
+        }
+    
         .burger div {
             width: 25px;
             height: 3px;
             background-color: var(--noir);
             margin: 5px;
             transition: all 0.3s ease;
+            position: relative;
         }
+    
+    /* Animation transformée en croix */
+    .burger.toggle .line1 {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+    .burger.toggle .line3 {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+    
+    /* Menu mobile */
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 70%;
+        max-width: 300px;
+        background-color: var(--beige);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
+        margin: 0;
+        padding: 80px 20px 20px;
+        list-style: none;
+    }
+    
+    nav ul.show {
+        transform: translateX(0);
+    }
+    
+    nav ul li {
+        margin: 20px 0;
+        opacity: 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav ul.show li {
+        animation: navLinkFade 0.5s ease forwards 0.3s;
+    }
+}
+
+/* Animation des liens */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
         /* Correction du problème d'affichage de la page d'accueil */
         #accueil {
@@ -784,17 +852,7 @@
             flex: 1;
         }
         
-        /* Réinitialisation du menu burger */
-        .burger.toggle .line1 {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-        .burger.toggle .line2 {
-            opacity: 0;
-        }
-        .burger.toggle .line3 {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-
+        
         /* Responsive */
         @media (max-width: 992px) {
             .about-detail,
@@ -1742,36 +1800,46 @@ document.getElementById('age').addEventListener('input', function() {
             link.addEventListener('click', handleAnchorClick);
         });
 
-        // Menu burger
-        const burger = document.querySelector('.burger');
-        const nav = document.querySelector('.nav-links');
-        const navLinksItems = document.querySelectorAll('.nav-links li');
-        
-        burger.addEventListener('click', () => {
-            // Toggle Nav
-            nav.classList.toggle('show');
-            
-            // Animation des liens
-            navLinksItems.forEach((link, index) => {
-                if (link.style.animation) {
-                    link.style.animation = '';
-                } else {
-                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-                }
-            });
-            
-            // Animation burger
-            burger.classList.toggle('toggle');
-        });
-        
-        // Fonction pour fermer le menu mobile
-        function closeMobileMenu() {
-            nav.classList.remove('show');
-            burger.classList.remove('toggle');
-            navLinksItems.forEach(link => {
-                link.style.animation = '';
-            });
+        // Menu burger amélioré
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav-links');
+const navLinks = document.querySelectorAll('.nav-links li a');
+
+function toggleMenu() {
+    // Toggle Nav
+    nav.classList.toggle('show');
+    // Animation burger
+    burger.classList.toggle('toggle');
+}
+
+// Ouverture/fermeture au clic sur le burger
+burger.addEventListener('click', (e) => {
+    e.stopPropagation(); // Empêche la propagation pour ne pas déclencher le document.click
+    toggleMenu();
+});
+
+// Fermeture automatique au clic sur un lien
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (nav.classList.contains('show')) {
+            toggleMenu();
         }
+    });
+});
+
+// Fermeture au clic à l'extérieur
+document.addEventListener('click', (e) => {
+    if (nav.classList.contains('show') && !nav.contains(e.target)) {
+        toggleMenu();
+    }
+});
+
+// Empêche la fermeture accidentelle quand on clique dans le menu
+nav.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+
         
         // Sticky header
         window.addEventListener('scroll', () => {
