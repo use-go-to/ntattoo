@@ -6,6 +6,8 @@
     <title>NTattoo - Artiste Tatoueur Professionnel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
         /* Variables de couleur */
         :root {
             --beige: #F1D1C8;
@@ -56,6 +58,16 @@
             overflow-x: hidden;
         }
 
+        .big-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 60px;
+            color: black;
+            text-align: center;
+            margin-bottom: 30px;
+        }   
+    
+
+
         .container {
             width: 90%;
             max-width: 1200px;
@@ -69,6 +81,7 @@
             color: var(--marronfoncé);
         }
 
+       
         h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             font-weight: 600;
@@ -529,6 +542,12 @@
             height: 320px;
         }
 
+        .gallery-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--marronfoncé);
+        }
+
         .gallery-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
@@ -916,11 +935,7 @@
                 <ul class="nav-links">
                     <li><a href="#accueil" class="active">Accueil</a></li>
                     <li><a href="#apropos">À Propos</a></li>
-                    <li><a href="#prix">Prix</a></li>
-                    <li><a href="#vente-flash">Vente Flash</a></li>
-                    <li><a href="#kit-creme">Kit Crème</a></li>
-                    <li><a href="#piercing">Piercing</a></li>
-                    <li><a href="#retours">Retours</a></li>
+                    <li><a href="#prix">Tarifs</a></li>                                                           
                     <li><a href="#rdv">RDV</a></li>
                     <li><a href="#realisations">Réalisations</a></li>
                     <li><a href="#local">Local</a></li>
@@ -933,15 +948,17 @@
             </nav>
         </div>
     </header>
-
+    
+    
     <!-- Page Content -->
     <main id="content">
         <!-- Page d'accueil -->
         <section id="accueil">
+            <h1 class="big-title">Tatoueuse, Technicienne de cils et  Masseuse</h1>
             <div class="hero">
                 <div class="container hero-content">
-                    <h1>L'art du tatouage personnalisé</h1>
-                    <p>Chez NTattoo, chaque tatouage est une œuvre unique créée sur mesure pour vous, dans un cadre professionnel et sécurisé.</p>
+                    <h1>L'art à fleur de peau</h1>
+                    <p>"Chaque tatouage raconte une histoire. Écrivons la vôtre ensemble."</p>
                     <a href="#rdv" class="btn">Prendre rendez-vous</a>
                 </div>
             </div>
@@ -952,7 +969,7 @@
                     <div class="about-content">
                         <div class="about-text">
                             <h2>À propos de moi</h2>
-                            <p>Je suis passionné par l'art du tatouage depuis plus de 10 ans. Mon objectif est de créer des œuvres uniques qui vous représentent parfaitement.</p>
+                            <p>Je m'appelle Nolwenn, j'ai 22 ans, et le tatouage est devenu pour moi le prolongement naturel de ma passion pour le dessin. Mon but : créer des  œuvres uniques qui vous ressemblent.</p>
                             <a href="#apropos" class="btn">En savoir plus</a>
                         </div>
                         <div class="about-image">
@@ -970,22 +987,22 @@
                         <div class="gallery-item">
                             <img src="img/IMG_1.jpeg" alt="Tatouage réaliste">
                             <div class="overlay">
-                                <h3>Tatouage réaliste</h3>
-                                <p>12 heures de travail</p>
+                                <h3>Florale Underboobs</h3>
+                                <p>2 heures de travail</p>
                             </div>
                         </div>
                         <div class="gallery-item">
                             <img src="img/IMG_2.jpeg" alt="Tatouage aquarelle">
                             <div class="overlay">
-                                <h3>Aquarelle florale</h3>
-                                <p>Style aquarelle</p>
+                                <h3>Horloge Florale</h3>
+                                <p>4 heures de travail</p>
                             </div>
                         </div>
                         <div class="gallery-item">
                             <img src="img/IMG_3.jpeg" alt="Tatouage géométrique">
                             <div class="overlay">
-                                <h3>Motif géométrique</h3>
-                                <p>Bras complet</p>
+                                <h3>Ornemental Underboobs</h3>
+                                <p>1 heure et demie de travail</p>
                             </div>
                         </div>
                     </div>
@@ -993,25 +1010,7 @@
                         <a href="#realisations" class="btn btn-vert">Voir toutes les réalisations</a>
                     </div>
                 </div>
-            </section>
-
-            <!-- Contact & Infos -->
-            <section class="contact-info">
-                <div class="container">
-                    <div class="contact-details">
-                        <h3>Contact</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Rue du Tatouage, 75000 Paris</p>
-                        <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
-                        <p><i class="fas fa-envelope"></i> contact@ntattoo.com</p>
-                    </div>
-                    <div class="business-hours">
-                        <h3>Horaires</h3>
-                        <p>Lundi - Vendredi : 10h - 19h</p>
-                        <p>Samedi : 10h - 18h</p>
-                        <p>Dimanche : Fermé</p>
-                    </div>
-                </div>
-            </section>
+            </section>            
         </section>
 
         <!-- Page À Propos -->
@@ -1027,13 +1026,15 @@
                     <div class="page-container">
                         <div class="about-detail">
                             <div class="about-text">
-                                <h2>Mon Parcours Artistique</h2>
-                                <p>Je m'appelle Nicolas et je suis tatoueur professionnel depuis plus de 10 ans. Ma passion pour l'art et le dessin m'a conduit naturellement vers le tatouage, un domaine où je peux exprimer ma créativité tout en créant des œuvres uniques et personnelles pour mes clients.</p>
-                                <p>Après une formation en arts plastiques à l'École des Beaux-Arts de Paris, j'ai commencé mon apprentissage dans un studio renommé de la capitale. Au fil des années, j'ai développé mon propre style, mélange de réalisme et d'éléments graphiques modernes, avec une attention particulière portée aux détails et aux nuances de couleur.</p>
-                                <p>Chez NTattoo, votre sécurité est notre priorité absolue. Nous utilisons exclusivement du matériel stérile à usage unique et respectons rigoureusement toutes les normes d'hygiène en vigueur.</p>
+                                <h2>Bienvenue sur l’univers de Nolwenn</h2>
+                                <p>Je m’appelle Nolwenn, j’ai 22 ans, et depuis toujours, le dessin est une passion qui m’anime. C’est tout naturellement que le tatouage s’est imposé comme une évidence, un moyen d’allier art et partage. Après une formation en hygiène et salubrité, j’ai décidé de me lancer en autodidacte, façonnant mon style au fil des rencontres et des inspirations.</p>
+                                <p>Mais mon univers ne s’arrête pas là ! Passionnée par le bien-être et l’esthétique, je propose également des prestations de beauté pour sublimer votre quotidien : massages relaxants, rehaussement de cils, browlift et extensions de cils.</p>
+                                <p>Ce que je préfère dans mon métier ? Les échanges, les sourires et la confiance que vous m’accordez. Chaque nouvelle rencontre est une source d’enrichissement, une occasion d’apprendre et de créer en harmonie avec vos envies.</p>
+                                <p>Que ce soit pour un tatouage unique, un moment de détente ou une beauté mise en valeur, je mets tout mon cœur et mon savoir-faire à votre service.</p>
+                                <p>Bien plus qu’un métier, une passion partagée.</p>
                             </div>
                             <div class="about-image">
-                                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Artiste NTattoo">
+                                <img src="img/IMG_cv.png" alt="Artiste NTattoo">
                             </div>
                         </div>
                         
@@ -1041,28 +1042,35 @@
                             <h2>Mon Parcours Professionnel</h2>
                             
                             <div class="cv-item">
-                                <span class="date">2015 - Présent</span>
-                                <h3>Propriétaire et Artiste Tatoueur - NTattoo</h3>
-                                <p>Création et gestion de mon propre studio de tatouage. Conception de tatouages personnalisés, gestion des rendez-vous, formation des apprentis.</p>
+                                <span class="date">Novembre 2024</span>
+                                <h3>Hygiène & Salubrité</h3>
+                                <p>Formation essentielle pour garantir un environnement sûr et professionnel, conforme aux normes sanitaires.</p>
                             </div>
                             
                             <div class="cv-item">
-                                <span class="date">2012 - 2015</span>
-                                <h3>Tatoueur Senior - Studio ArtCorp, Paris</h3>
-                                <p>Tatouage artistique sur mesure, gestion des projets complexes, formation des nouveaux tatoueurs.</p>
+                                <span class="date">Juillet 2025</span>
+                                <h3>Rehaussement de cils</h3>
+                                <p>Maîtrise des techniques pour un regard naturellement sublimé, tout en douceur et en précision.</p>
                             </div>
                             
                             <div class="cv-item">
-                                <span class="date">2010 - 2012</span>
-                                <h3>Apprenti Tatoueur - Inkspiration Studio, Lyon</h3>
-                                <p>Apprentissage des techniques de tatouage, gestion de l'hygiène, pratique sur peau synthétique puis sur clients.</p>
+                                <span class="date">Juillet 2025</span>
+                                <h3>BrowLift</h3>
+                                <p>Expertise en modelage et fixation des sourcils pour une allure structurée et soignée.</p>
                             </div>
                             
                             <div class="cv-item">
-                                <span class="date">2006 - 2010</span>
-                                <h3>École Nationale Supérieure des Beaux-Arts, Paris</h3>
-                                <p>Diplôme d'Arts Plastiques avec spécialisation en dessin et peinture.</p>
+                                <span class="date">Juillet 2025</span>
+                                <h3>Extensions de cils</h3>
+                                <p>Pose professionnelle de cils volumateurs ou naturels pour un effet glamour et durable.</p>
                             </div>
+
+                            <div class="cv-item">
+                                <span class="date">Juillet 2025</span>
+                                <h3>Massage bien-être</h3>
+                                <p>Apprentissage des gestes relaxants pour offrir détente et sérénité, adaptés à chaque besoin.</p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -1097,31 +1105,31 @@
                                     <td>Mini tatouage (symbole, initiale)</td>
                                     <td>1-3 cm</td>
                                     <td>30 min - 1h</td>
-                                    <td>80 €</td>
+                                    <td>60 €</td>
                                 </tr>
                                 <tr>
                                     <td>Petit tatouage (mot, petit motif)</td>
                                     <td>3-6 cm</td>
                                     <td>1h - 2h</td>
-                                    <td>150 €</td>
+                                    <td>80 €</td>
                                 </tr>
                                 <tr>
                                     <td>Tatouage moyen (dessin détaillé)</td>
                                     <td>6-12 cm</td>
                                     <td>2h - 4h</td>
-                                    <td>250 €</td>
+                                    <td>100 €</td>
                                 </tr>
                                 <tr>
                                     <td>Grand tatouage (avant-bras, mollet)</td>
                                     <td>12-20 cm</td>
                                     <td>4h - 6h</td>
-                                    <td>400 €</td>
+                                    <td>150 €</td>
                                 </tr>
                                 <tr>
                                     <td>Pièce maîtresse (demi-bras, dos)</td>
                                     <td>20-30 cm</td>
                                     <td>2 sessions de 4h</td>
-                                    <td>700 €</td>
+                                    <td>400 €</td>
                                 </tr>
                                 <tr>
                                     <td>Tatouage intégral (manche complète, jambe)</td>
@@ -1132,476 +1140,387 @@
                             </tbody>
                         </table>
                         
-                        <h2>Tarifs Piercing</h2>
+                        <h2>Tarifs Massage</h2>
                         <table class="pricing-table">
                             <thead>
                                 <tr>
-                                    <th>Type de Piercing</th>
-                                    <th>Bijou de base</th>
+                                    <th>Type de Massage</th>
+                                    <th>Durée</th>
                                     <th>Prix</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Lobe (oreille)</td>
-                                    <td>Boule en acier</td>
-                                    <td>40 €</td>
+                                    <th>Relaxation</th>
+
                                 </tr>
                                 <tr>
-                                    <td>Hélix (cartilage)</td>
-                                    <td>Boule en acier</td>
+                                    <td>Massage visage & cuir chevelu</td>
+                                    <td>30 min</td>
+                                    <td>35 €</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>Massage dos</td>
+                                    <td>30 min</td>
+                                    <td>35 €</td>
+                                </tr>
+                                <tr>
+                                    <td>Massage mains + bras, épaules & nuque</td>
+                                    <td>30 min</td>
+                                    <td>35 €</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Massage dos, nuque & cuir chevelu</td>
+                                    <td>45 min</td>
                                     <td>50 €</td>
                                 </tr>
+
                                 <tr>
-                                    <td>Nez</td>
-                                    <td>Clou en acier</td>
-                                    <td>50 €</td>
+                                    <td>Massage mains + bras, épaules & nuque</td>
+                                    <td>1h</td>
+                                    <td>60 €</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Prénatal</th>
+
                                 </tr>
                                 <tr>
-                                    <td>Sourcil</td>
-                                    <td>Barre courbée</td>
-                                    <td>50 €</td>
+                                    <td>Massage prénatal (femme enceinte)</td>
+                                    <td>30 min</td>
+                                    <td>35 €</td>
                                 </tr>
+                                
                                 <tr>
-                                    <td>Nombril</td>
-                                    <td>Barre courbée</td>
+                                    <td>Massage prénatal (femme enceinte)</td>
+                                    <td>1h</td>
                                     <td>60 €</td>
                                 </tr>
                                 <tr>
-                                    <td>Langue</td>
-                                    <td>Barre droite</td>
+                                    <th>Soin visage</th>
+
+                                </tr>                          
+
+                                <tr>
+                                    <td>Soin visage complet : nettoyage, éxfoliation, massage, masque et sérum</td>
+                                    <td>1h/1h30</td>
+                                    <td>70 €</td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+                        <h2>Tarifs Sourcils</h2>
+                        <table class="pricing-table">
+                            <thead>
+                                <tr>
+                                    <th>Préstation</th>
+                                    <th>Prix</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Teinture</td>
+                                    <td>10 €</td>
+                                </tr>
+
+                                 <tr>
+                                    <td>Browlift</td>
+                                    <td>40 €</td>
+                                </tr>
+
+                                 <tr>
+                                    <td>Browlift + Teinture</td>
+                                    <td>45 €</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Tarifs Cils</h2>
+                        <table class="pricing-table">
+                            <thead>
+                                <tr>
+                                    <th>Préstation</th>
+                                    <th>Prix</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Teinture</td>
+                                    <td>10 €</td>
+                                </tr>
+
+                                 <tr>
+                                    <td>Réhaussement de cils</td>
+                                    <td>45 €</td>
+                                </tr>
+
+                                 <tr>
+                                    <td>Réhaussement de cils + Teinture</td>
+                                    <td>50 €</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Réhaussement de cils + Teinture + Soin</td>
                                     <td>60 €</td>
                                 </tr>
                             </tbody>
                         </table>
+
+                        <h2>Tarifs Forfait</h2>
+                        <table class="pricing-table">
+                            <thead>
+                                <tr>
+                                    <th>Préstation</th>
+                                    <th>Prix</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Réhaussement de cils + Browlift</td>
+                                    <td>70 €</td>
+                                </tr>
+
+                                 <tr>
+                                    <td>Réhaussement de cils & Teinture + Browlift</td>
+                                    <td>75 €</td>
+                                </tr>
+
+                                 <tr>
+                                    <td>Réhaussement de cils & Browlift + Teinture & Soin</td>
+                                    <td>80 €</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Teinture cils et sourcils</td>
+                                    <td>15 €</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Tarifs Éxtension de cils</h2>
+                        <table class="pricing-table">
+                            <thead>
+                                <tr>
+                                    <th>Préstation</th>
+                                    <th>Prix</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Éxtension cil à cil</td>
+                                    <td>70 €</td>
+                                </tr>
+
+                                 <tr>
+                                    <td>Remplissage 2 semaines</td>
+                                    <td>20 €</td>
+                                </tr>
+
+                                 <tr>
+                                    <td>Remplissage 3 semaines</td>
+                                    <td>30 €</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Au delà de 4 semaines</td>
+                                    <td>Pose complète</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Dépose</td>
+                                    <td>15 €</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+
+
+
+
                         
                         <div class="price-notes">
                             <h3>Informations importantes</h3>
-                            <ul>
-                                <li>Un acompte de 30% est requis pour toute réservation de plus de 2 heures</li>
-                                <li>Tous les prix incluent la TVA</li>
-                                <li>Les bijoux premium (or, titane, pierres précieuses) sont en supplément</li>
+                            <ul>                                
+                                <li>Tous les prix incluent la TVA</li>                        
                                 <li>Le prix final peut varier en fonction de la complexité du design et du temps réel passé</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Page Vente Flash -->
-        <section id="vente-flash" class="page-section" style="display: none;">
-            <div class="page-hero">
-                <div class="container">
-                    <h1>Vente Flash</h1>
-                </div>
-            </div>
-            
-            <div class="page-content">
-                <div class="container">
-                    <div class="page-container">
-                        <h2>Flash du Mois</h2>
-                        <p>Découvrez nos tatouages flash disponibles immédiatement à des prix exceptionnels. Ces designs uniques sont disponibles pour une durée limitée seulement.</p>
-                        
-                        <div class="flash-grid">
-                            <div class="flash-card">
-                                <div class="flash-image">
-                                    <img src="https://images.unsplash.com/photo-1580234811497-9df7fd2f357e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fleur de lotus">
-                                    <div class="flash-badge">-30%</div>
-                                </div>
-                                <div class="flash-content">
-                                    <h3>Fleur de Lotus</h3>
-                                    <p>Symbole de pureté et d'éveil spirituel, ce tatouage mesure environ 8cm.</p>
-                                    <div class="flash-price">120 €</div>
-                                    <div class="flash-actions">
-                                        <button class="btn btn-rose">Réserver</button>
-                                        <button class="btn">Détails</button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="flash-card">
-                                <div class="flash-image">
-                                    <img src="https://images.unsplash.com/photo-1598522325070-8d60a0a786b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Loup">
-                                    <div class="flash-badge">Nouveau</div>
-                                </div>
-                                <div class="flash-content">
-                                    <h3>Loup Lunaire</h3>
-                                    <p>Représentation stylisée d'un loup hurlant à la lune, taille 10cm.</p>
-                                    <div class="flash-price">150 €</div>
-                                    <div class="flash-actions">
-                                        <button class="btn btn-rose">Réserver</button>
-                                        <button class="btn">Détails</button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="flash-card">
-                                <div class="flash-image">
-                                    <img src="https://images.unsplash.com/photo-1598257006675-5820b1a0a0c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mandala">
-                                    <div class="flash-badge">-25%</div>
-                                </div>
-                                <div class="flash-content">
-                                    <h3>Mandala Géométrique</h3>
-                                    <p>Design complexe de mandala, parfait pour le dos ou l'avant-bras (12cm).</p>
-                                    <div class="flash-price">180 €</div>
-                                    <div class="flash-actions">
-                                        <button class="btn btn-rose">Réserver</button>
-                                        <button class="btn">Détails</button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="flash-card">
-                                <div class="flash-image">
-                                    <img src="https://images.unsplash.com/photo-1579541706800-8b8e8a2c8b0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ancre">
-                                    <div class="flash-badge">Populaire</div>
-                                </div>
-                                <div class="flash-content">
-                                    <h3>Ancre Maritime</h3>
-                                    <p>Classique revisité, idéal pour la cheville ou le poignet (6cm).</p>
-                                    <div class="flash-price">100 €</div>
-                                    <div class="flash-actions">
-                                        <button class="btn btn-rose">Réserver</button>
-                                        <button class="btn">Détails</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="flash-info">
-                            <h3>Conditions de la vente flash</h3>
-                            <ul>
-                                <li>Les tatouages flash sont des designs prédéfinis non modifiables</li>
-                                <li>Disponibilité limitée à 5 exemplaires par design</li>
-                                <li>Prix valables uniquement pour la taille indiquée</li>
-                                <li>Un acompte de 50% est requis pour réserver votre flash</li>
-                                <li>Validité des offres : jusqu'au 30 du mois en cours</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Page Kit Crème -->
-        <section id="kit-creme" class="page-section" style="display: none;">
-            <div class="page-hero">
-                <div class="container">
-                    <h1>Kit de Soins Crème</h1>
-                </div>
-            </div>
-            
-            <div class="page-content">
-                <div class="container">
-                    <div class="page-container">
-                        <h2>Kit de Soins Professionnel pour Tatouage</h2>
-                        <p>Prenez soin de votre nouveau tatouage avec notre kit de soins spécialement formulé pour une cicatrisation optimale et une conservation parfaite des couleurs.</p>
-                        
-                        <div class="product-detail">
-                            <div class="product-image">
-                                <img src="img/IMG_kit.jpeg" alt="Kit de soins">
-                            </div>
-                            <div class="product-info">
-                                <h3>Composition du kit</h3>
-                                <ul>
-                                    <li>Crème cicatrisante 50ml - Formule enrichie en vitamine E</li>
-                                    <li>Nettoyant doux sans parfum 100ml</li>
-                                    <li>Baume réparateur pour peau irritée 30ml</li>
-                                    <li>Protection solaire SPF 50+ 30ml</li>
-                                    <li>Guide d'utilisation complet</li>
-                                </ul>
-                                
-                                <div class="product-price">
-                                    <span class="price">39,90 €</span>
-                                    <button class="btn btn-rose">Ajouter au panier</button>
-                                </div>
-                                
-                                <div class="product-benefits">
-                                    <h3>Avantages</h3>
-                                    <ul>
-                                        <li>Accélère le processus de cicatrisation</li>
-                                        <li>Prévient les infections</li>
-                                        <li>Conserve l'éclat des couleurs</li>
-                                        <li>Réduit les démangeaisons</li>
-                                        <li>Formule hypoallergénique et testée dermatologiquement</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Page Piercing -->
-        <section id="piercing" class="page-section" style="display: none;">
-            <div class="page-hero">
-                <div class="container">
-                    <h1>Piercing Professionnel</h1>
-                </div>
-            </div>
-            
-            <div class="page-content">
-                <div class="container">
-                    <div class="page-container">
-                        <h2>Bijoux et Piercing de Qualité</h2>
-                        <p>Découvrez notre sélection de bijoux pour piercing et nos services de piercing professionnel réalisés dans les meilleures conditions d'hygiène.</p>
-                        
-                        <div class="piercing-services">
-                            <div class="service">
-                                <h3>Piercing réalisé sur place</h3>
-                                <p>Nos artistes certifiés réalisent tous types de piercing dans un environnement stérile et sécurisé.</p>
-                                <ul>
-                                    <li>Matériel stérile à usage unique</li>
-                                    <li>Bijoux de qualité médicale (acier chirurgical, titane)</li>
-                                    <li>Conseils personnalisés pour l'entretien</li>
-                                    <li>Suivi post-piercing gratuit</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="bijoux-grid">
-                                <h3>Notre collection de bijoux</h3>
-                                <div class="bijoux-container">
-                                    <div class="bijou-item">
-                                        <img src="https://images.unsplash.com/photo-1596452854549-8b73e7392cd0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bijou en acier">
-                                        <h4>Boules en acier chirurgical</h4>
-                                        <p>À partir de 15€</p>
-                                    </div>
-                                    <div class="bijou-item">
-                                        <img src="https://images.unsplash.com/photo-1598522325070-8d60a0a786b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bijou en or">
-                                        <h4>Clous en or 18 carats</h4>
-                                        <p>À partir de 45€</p>
-                                    </div>
-                                    <div class="bijou-item">
-                                        <img src="https://images.unsplash.com/photo-1579541706800-8b8e8a2c8b0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bijou en titane">
-                                        <h4>Barres en titane</h4>
-                                        <p>À partir de 25€</p>
-                                    </div>
-                                    <div class="bijou-item">
-                                        <img src="https://images.unsplash.com/photo-1580234811497-9df7fd2f357e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bijou fantaisie">
-                                        <h4>Bijoux fantaisie avec pierres</h4>
-                                        <p>À partir de 20€</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Page Retours Clients -->
-        <section id="retours" class="page-section" style="display: none;">
-            <div class="page-hero">
-                <div class="container">
-                    <h1>Retours Clients</h1>
-                </div>
-            </div>
-            
-            <div class="page-content">
-                <div class="container">
-                    <div class="page-container">
-                        <h2>Ce que disent nos clients</h2>
-                        <p>Découvrez les témoignages de nos clients satisfaits par leur expérience chez NTattoo.</p>
-                        
-                        <div class="testimonials">
-                            <div class="testimonial">
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p>"J'ai adoré mon expérience chez NTattoo ! Nicolas a su transformer mon idée en une véritable œuvre d'art. L'hygiène est irréprochable et l'accueil chaleureux. Je recommande vivement !"</p>
-                                <div class="client-info">
-                                    <span class="client-name">Marie L.</span>
-                                    <span class="client-date">15 juin 2023</span>
-                                </div>
-                            </div>
-                            
-                            <div class="testimonial">
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p>"Mon premier tatouage s'est parfaitement bien passé. Nicolas est un artiste talentueux et très professionnel. Il a pris le temps de discuter de mon projet et m'a guidé tout au long du processus. Résultat magnifique !"</p>
-                                <div class="client-info">
-                                    <span class="client-name">Thomas P.</span>
-                                    <span class="client-date">2 juillet 2023</span>
-                                </div>
-                            </div>
-                            
-                            <div class="testimonial">
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <p>"J'ai fait faire mon piercing chez NTattoo et je suis ravie ! L'équipe est compétente, rassurante et très à l'écoute. Les consignes d'entretien ont été très claires. Je reviendrai pour mon prochain tatouage !"</p>
-                                <div class="client-info">
-                                    <span class="client-name">Sophie D.</span>
-                                    <span class="client-date">28 mai 2023</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="add-review">
-                            <h3>Laissez votre avis</h3>
-                            <form>
-                                <div class="form-group">
-                                    <label for="review-name">Votre nom</label>
-                                    <input type="text" id="review-name" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="review-rating">Note</label>
-                                    <select id="review-rating" class="form-control">
-                                        <option value="5">5 étoiles</option>
-                                        <option value="4">4 étoiles</option>
-                                        <option value="3">3 étoiles</option>
-                                        <option value="2">2 étoiles</option>
-                                        <option value="1">1 étoile</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="review-text">Votre témoignage</label>
-                                    <textarea id="review-text" class="form-control" rows="5"></textarea>
-                                </div>
-                                <button type="submit" class="btn">Envoyer mon avis</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Page RDV -->
+        </section> 
+        
+        
+               
+  
         <section id="rdv" class="page-section" style="display: none;">
-            <div class="page-hero">
-                <div class="container">
-                    <h1>Prendre Rendez-vous</h1>
-                </div>
-            </div>
-            
-            <div class="page-content">
-                <div class="container">
-                    <div class="page-container">
-                        <h2>Formulaire de Prise de Rendez-vous</h2>
-                        <p>Remplissez ce formulaire pour réserver votre consultation ou votre séance de tatouage. Je vous contacterai dans les 48h pour confirmer votre rendez-vous.</p>
-                        
-                        <form class="rdv-form">
-                            <div class="form-row">
-                                <div class="form-col">
-                                    <div class="form-group">
-                                        <label for="nom">Nom *</label>
-                                        <input type="text" id="nom" class="form-control" required>
-                                    </div>
-                                </div>
-                                <div class="form-col">
-                                    <div class="form-group">
-                                        <label for="prenom">Prénom *</label>
-                                        <input type="text" id="prenom" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-col">
-                                    <div class="form-group">
-                                        <label for="email">Email *</label>
-                                        <input type="email" id="email" class="form-control" required>
-                                    </div>
-                                </div>
-                                <div class="form-col">
-                                    <div class="form-group">
-                                        <label for="telephone">Téléphone *</label>
-                                        <input type="tel" id="telephone" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="age">Âge *</label>
-                                <input type="number" id="age" class="form-control" min="16" max="99" required>
-                            </div>
-                            
-                            <div id="minor-warning" class="age-warning" style="display: none;">
-                                <p><i class="fas fa-exclamation-triangle"></i> <strong>Important pour les mineurs :</strong> Si vous avez moins de 18 ans, vous devrez être accompagné d'un représentant légal lors de votre rendez-vous. Celui-ci devra présenter une pièce d'identité valide et signer une autorisation parentale.</p>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Type de projet *</label>
-                                <select class="form-control" required>
-                                    <option value="">-- Sélectionnez --</option>
-                                    <option value="consultation">Consultation (premier rendez-vous)</option>
-                                    <option value="tatouage">Tatouage</option>
-                                    <option value="piercing">Piercing</option>
-                                    <option value="retouche">Retouche/Réparation</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Emplacement souhaité *</label>
-                                <select class="form-control" required>
-                                    <option value="">-- Sélectionnez --</option>
-                                    <option value="bras">Bras/Avant-bras</option>
-                                    <option value="main">Main/Doigts</option>
-                                    <option value="jambe">Jambe/Mollet</option>
-                                    <option value="torse">Torse/Dos</option>
-                                    <option value="cou">Cou/Nuque</option>
-                                    <option value="visage">Visage (consentement écrit requis)</option>
-                                    <option value="autre">Autre</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Taille approximative *</label>
-                                <select class="form-control" required>
-                                    <option value="">-- Sélectionnez --</option>
-                                    <option value="petit">Petit (moins de 10cm)</option>
-                                    <option value="moyen">Moyen (10-20cm)</option>
-                                    <option value="grand">Grand (20-30cm)</option>
-                                    <option value="piece">Pièce maîtresse (+30cm)</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="description">Description de votre projet *</label>
-                                <textarea id="description" class="form-control" rows="5" required placeholder="Décrivez en détail votre projet, vos idées, les éléments que vous souhaitez intégrer, les couleurs, etc."></textarea>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Fichiers d'inspiration (croquis, photos, etc.)</label>
-                                <p class="small">Vous pouvez télécharger jusqu'à 3 fichiers (JPG, PNG, PDF - max 5MB chacun)</p>
-                                <div class="file-upload">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    <p>Glissez-déposez vos fichiers ici ou <strong>cliquez pour parcourir</strong></p>
-                                    <input type="file" multiple style="display: none;">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="form-check">
-                                    <input type="checkbox" id="consentement" class="form-check-input" required>
-                                    <label for="consentement" class="form-check-label">Je confirme avoir pris connaissance des <a href="#">conditions générales</a> et de la <a href="#">politique de confidentialité</a> *</label>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group" style="text-align: center; margin-top: 40px;">
-                                <button type="submit" class="btn">Envoyer ma demande</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div class="page-hero">
+        <div class="container">
+            <h1>Prendre Rendez-vous</h1>
+        </div>
+    </div>
+    
+    <div class="page-content">
+        <div class="container">
+            <div class="page-container">
+                <h2>Formulaire de Prise de Rendez-vous</h2>
+                <p>Remplissez ce formulaire pour réserver votre consultation ou votre séance. Je vous contacterai dans les 48h pour confirmer.</p>
+                
+                <!-- Formulaire modifié pour FormSubmit -->
+                <form 
+                    class="rdv-form" 
+                    action="https://formsubmit.co/ntattoo35@gmail.com" 
+                    method="POST"
+                    enctype="multipart/form-data"
+                >
+                    <!-- Champs cachés de configuration -->
+                    <input type="hidden" name="_subject" value="Nouvelle demande de rendez-vous">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_autoresponse" value="Merci pour votre demande ! Nous vous contacterons sous 48h.">
+                    <input type="hidden" name="_next" value="https://votresite.com/merci.html"> <!-- Optionnel -->
 
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="nom">Nom *</label>
+                                <input type="text" id="nom" name="nom" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="prenom">Prénom *</label>
+                                <input type="text" id="prenom" name="prenom" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="telephone">Téléphone *</label>
+                                <input type="tel" id="telephone" name="telephone" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age">Âge *</label>
+                        <input type="number" id="age" name="age" class="form-control" min="16" max="99" required>
+                    </div>
+                    
+                    <div id="minor-warning" class="age-warning" style="display: none;">
+                        <p><i class="fas fa-exclamation-triangle"></i> <strong>Important pour les mineurs :</strong> Si vous avez moins de 18 ans, vous devrez être accompagné d'un représentant légal.</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Type de projet *</label>
+                        <select class="form-control" name="Type de projet" required>
+                            <option value="">-- Sélectionnez --</option>                                    
+                            <option value="Tatouage">Tatouage</option>
+                            <option value="Massage">Massage</option>
+                            <option value="Sourcils">Sourcils</option>
+                            <option value="Cils">Cils</option>
+                            <option value="Forfait">Forfait</option>
+                            <option value="Extension de cils">Éxtension de cils</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Description de votre projet *</label>
+                        <textarea id="description" name="Description du projet" class="form-control" rows="5" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Fichiers d'inspiration</label>
+                        <p class="small">JPG, PNG ou PDF (max 5MB chacun)</p>
+                        <div class="file-upload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Glissez-déposez vos fichiers ou <strong>cliquez ici</strong></p>
+                            <input type="file" id="fichiers" name="Fichiers joints" multiple accept=".jpg,.jpeg,.png,.pdf">
+                        </div>
+                        <div id="file-list"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input type="checkbox" id="consentement" name="Consentement CGU" class="form-check-input" required>
+                            <label for="consentement" class="form-check-label">J'accepte les <a href="#">conditions générales</a> *</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group text-center mt-5">
+                        <button type="submit" class="btn">Envoyer ma demande</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Gestion de l'affichage des fichiers
+document.getElementById('fichiers').addEventListener('change', function(e) {
+    const fileList = document.getElementById('file-list');
+    fileList.innerHTML = '';
+    
+    if(this.files.length > 3) {
+        alert('Maximum 3 fichiers autorisés');
+        this.value = '';
+        return;
+    }
+    
+    Array.from(this.files).forEach(file => {
+        const fileItem = document.createElement('div');
+        fileItem.className = 'file-item mb-2';
+        fileItem.innerHTML = `
+            <i class="fas fa-paperclip mr-2"></i>
+            ${file.name} (${(file.size/1024/1024).toFixed(2)}MB)
+        `;
+        fileList.appendChild(fileItem);
+    });
+});
+
+// Avertissement pour les mineurs
+document.getElementById('age').addEventListener('input', function() {
+    document.getElementById('minor-warning').style.display = 
+        this.value < 18 ? 'block' : 'none';
+});
+</script>
+
+<style>
+.file-upload {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.file-upload:hover {
+    border-color: #999;
+}
+.file-item {
+    background: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+.age-warning {
+    background: #fff3cd;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+</style>
         <!-- Page Réalisations -->
         <section id="realisations" class="page-section" style="display: none;">
             <div class="page-hero">
@@ -1616,70 +1535,71 @@
                         <h2>Portfolio de mes Tatouages</h2>
                         <p>Découvrez une sélection de mes dernières créations. Chaque tatouage est unique et réalisé sur mesure pour mes clients.</p>
                         
-                        <div class="filters">
-                            <button class="btn btn-rose active">Tous</button>
-                            <button class="btn btn-vert">Réalisme</button>
-                            <button class="btn btn-vert">Aquarelle</button>
-                            <button class="btn btn-vert">Géométrique</button>
-                            <button class="btn btn-vert">Minimaliste</button>
-                            <button class="btn btn-vert">Traditionnel</button>
-                        </div>
+                        
                         
                         <div class="gallery-grid">
                             <div class="gallery-item">
                                 <img src="img/IMG_4.jpeg" alt="Tatouage réaliste">
                                 <div class="overlay">
-                                    <h3>Tatouage réaliste</h3>
-                                    <p>12 heures de travail</p>
+                                    <h3>Serpent Ornemental</h3>
+                                    <p>3 heures et demie de travail</p>
                                 </div>
                             </div>
                             <div class="gallery-item">
                                 <img src="img/IMG_5.jpeg" alt="Tatouage aquarelle">
                                 <div class="overlay">
-                                    <h3>Aquarelle florale</h3>
-                                    <p>Style aquarelle</p>
+                                    <h3>Bouquet Floral</h3>
+                                    <p>1 heure et demie de travail</p>
                                 </div>
                             </div>
                             <div class="gallery-item">
                                 <img src="img/IMG_6.jpeg" alt="Tatouage géométrique">
                                 <div class="overlay">
-                                    <h3>Motif géométrique</h3>
-                                    <p>Bras complet</p>
+                                    <h3>Simba</h3>
+                                    <p>1 heures de travail</p>
                                 </div>
                             </div>
                             <div class="gallery-item">
                                 <img src="img/IMG_7.jpeg" alt="Tatouage minimaliste">
                                 <div class="overlay">
-                                    <h3>Minimaliste</h3>
-                                    <p>Ligne fine</p>
+                                    <h3>Loup Semi-réaliste</h3>
+                                    <p>4 heures de travail</p>
                                 </div>
                             </div>
                             <div class="gallery-item">
                                 <img src="img/IMG_8.jpeg" alt="Tatouage loup">
                                 <div class="overlay">
-                                    <h3>Loup lunaire</h3>
-                                    <p>Avant-bras</p>
+                                    <h3>Citation</h3>
+                                    <p>15 minutes de travail</p>
                                 </div>
                             </div>
                             <div class="gallery-item">
-                                <img src="img/IMG_8.jpeg" alt="Tatouage ancre">
+                                <img src="img/IMG_9.jpeg" alt="Tatouage ancre">
                                 <div class="overlay">
-                                    <h3>Ancre maritime</h3>
-                                    <p>Style traditionnel</p>
+                                    <h3>Citation</h3>
+                                    <p>1 heures de travail</p>
                                 </div>
                             </div>
                             <div class="gallery-item">
-                                <img src="img/IMG_9.jpeg" alt="Tatouage mandala">
+                                <img src="img/IMG_10.jpeg" alt="Tatouage ancre">
                                 <div class="overlay">
-                                    <h3>Mandala dorsal</h3>
-                                    <p>20 heures de travail</p>
+                                    <h3>Citation</h3>
+                                    <p>30 minutes de travail</p>
                                 </div>
                             </div>
                             <div class="gallery-item">
-                                <img src="img/IMG_10.jpeg" alt="Tatouage fleur">
+                                <img src="img/IMG_11.jpeg" alt="Tatouage mandala">
                                 <div class="overlay">
-                                    <h3>Fleurs détaillées</h3>
-                                    <p>Jambe</p>
+                                    <h3>Croissant de Lune Floral</h3>
+                                    <p>45 minutes de travail</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="img/IMG_12.jpeg" alt="Tatouage fleur">
+                                <div class="overlay">
+                                    <h3>St.Barthélemy</h3>
+                                    <p>20 minutes de travail</p>
+
                                 </div>
                             </div>
                         </div>
@@ -1702,20 +1622,16 @@
                         <div class="local-container">
                             <div class="local-info">
                                 <h2>Le Studio NTattoo</h2>
-                                <p>Bienvenue dans mon studio situé au cœur de Paris. J'ai conçu cet espace pour qu'il soit à la fois accueillant, professionnel et conforme aux normes d'hygiène les plus strictes.</p>
-                                
+                                <p>J'ai aménagé cet espace avec soin pour vous offrir un cadre à la fois chaleureux et professionnel, où se mêlent art du tatouage, bien-être et beauté. Installée au cœur de cette commune bretonne, j'accueille chaque client dans une atmosphère conviviale tout en garantissant le respect strict des normes d'hygiène. Que ce soit pour un tatouage personnalisé, un moment de détente avec un massage ou une prestation cils, mon objectif est de vous proposer une expérience sur mesure dans un environnement où vous vous sentirez parfaitement à l'aise.</p>
+                                <p>Prête à vous recevoir pour concrétiser vos envies avec passion et professionnalisme !</p>
+                                <p>Nolwenn - Tatoueuse, Masseuse & Technicienne de cils</p>
                                 <h3>Adresse</h3>
-                                <p><i class="fas fa-map-marker-alt"></i> Les Rues Maces<br>35380 Treffendel</p>
+                                <p><i class="fas fa-map-marker-alt"></i> 24 Les Rues Maces<br>35380 Treffendel</p>
                                 
                                 <h3>Horaires d'ouverture</h3>
-                                <p><i class="fas fa-clock"></i> Lundi - Vendredi : 10h - 19h<br>
-                                <i class="fas fa-clock"></i> Samedi : 10h - 18h<br>
+                                <p><i class="fas fa-clock"></i> Lundi - Samedi : 9h30-16h30 sur RDV<br>
                                 <i class="fas fa-clock"></i> Dimanche : Fermé</p>
-                                
-                                <h3>Accès</h3>
-                                <p><i class="fas fa-subway"></i> Métro : Ligne 4, station "Tatouage"<br>
-                                <i class="fas fa-bus"></i> Bus : Lignes 38, 67, 96<br>
-                                <i class="fas fa-parking"></i> Parking public à 200m</p>
+                                   
                                 
                                 <p>Pour toute question ou demande spécifique, n'hésitez pas à me contacter directement.</p>
                                 
@@ -1747,12 +1663,11 @@
             <div class="footer-content">
                 <div class="footer-section about">
                     <img src="ntattoo.png" alt="Logo NTattoo" class="footer-logo">
-                    <p>NTattoo - Artiste tatoueur professionnel depuis 2015. Spécialisé dans les tatouages personnalisés et sur mesure dans un cadre professionnel et sécurisé.</p>
+                    <p>NTattoo - Artiste autodidacte, je mets mon univers créatif et mon expertise à votre service pour des tatouages uniques, des soins bien-être et des regards sublimés.</p>
                     <div class="socials">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="https://www.instagram.com/n_tattoo___?igsh=NXphb282N2ZnYmNn&utm_source=qr"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/16wNqZZ67d/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.tiktok.com/@nolwennlctr?_t=ZN-8yb47McLmq6&_r=1"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
                 <div class="footer-section links">
@@ -1768,16 +1683,16 @@
                 </div>
                 <div class="footer-section contact">
                     <h3>Contact</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Rue du Tatouage, 75000 Paris</p>
-                    <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
-                    <p><i class="fas fa-envelope"></i> contact@ntattoo.com</p>
-                    <p><i class="fas fa-clock"></i> Du mardi au samedi, 10h-19h</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 24  Les Rues Maces 35380 Treffendel </p>
+                    <p><i class="fas fa-phone"></i>06 43 57 39 01</p>
+                    <p><i class="fas fa-envelope"></i>ntattoo35@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Du lundi au samedi, 9h30-16h30 sur RDV</p>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2023 NTattoo. Tous droits réservés.</p>
+                <p>&copy; 2025 NTattoo. Tous droits réservés.</p>
                 <p><a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a> | <a href="#">Conditions d'utilisation</a></p>
             </div>
         </div>
@@ -1919,6 +1834,18 @@
                 }
             });
         });
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>
